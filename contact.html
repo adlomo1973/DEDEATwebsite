@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>Contact | DEDEAT</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+<style>
+:root {
+    --primary-maroon: #7A0026;
+    --primary-maroon-2: #5c001d;
+    --accent-gold: #f2b300;
+    --text-dark: #222222;
+    --text-on-dark: #ffffff;
+    --bg-lite: #fafafa;
+    --card: #ffffff;
+    --muted: #f4f4f4;
+    --focus: #ffd24d;
+}
+*{box-sizing:border-box}
+body {font-family: "Segoe UI", Arial, Helvetica, sans-serif;margin:0;background: var(--bg-lite);color: var(--text-dark);line-height:1.45}
+a{color: var(--primary-maroon); text-decoration: none}
+a:hover{color: var(--accent-gold)}
+a:focus, button:focus{outline: 3px solid var(--focus); outline-offset: 2px}
+
+/* HEADER */
+header{
+    background:#fff;
+    border-bottom: 4px solid var(--primary-maroon);
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:12px 28px;
+}
+header img{height:52px}
+nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+nav a{font-weight:600;color:var(--text-dark)}
+nav a:hover{color:var(--primary-maroon)}
+
+/* HERO */
+.hero{
+    color:var(--text-on-dark);
+    text-align:center;
+    padding:64px 20px;
+    background: linear-gradient(135deg, var(--primary-maroon), var(--primary-maroon-2));
+}
+.hero h1{font-size:2.2rem;margin:0 0 14px}
+
+/* CONTAINER */
+.container{max-width:1100px;margin:0 auto;padding:28px}
+
+/* COLLAPSIBLE SECTIONS */
+.collapsible-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--primary-maroon-2);
+    color: #fff;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-weight: 600;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.collapsible-btn:hover {background: var(--primary-maroon);}
+.collapsible-content {
+    display: none;
+    padding: 12px;
+    background: var(--muted);
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+.card{background:var(--card);border:1px solid #e9e9e9;border-radius:12px;padding:18px;box-shadow:0 2px 5px rgba(0,0,0,.05)}
+.card h3{margin-top:0;color:var(--primary-maroon)}
+.card p{margin:6px 0}
+
+/* FORM */
+form input, form textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;margin-bottom:12px}
+button.btn.gold{border:none;border-radius:8px;padding:12px 22px;font-weight:700;cursor:pointer;background:var(--accent-gold);color:#000}
+button.btn.gold:hover{background:#ffd24d}
+
+/* FOOTER */
+footer{background: var(--primary-maroon);color:var(--text-on-dark);text-align:center;padding:24px}
+footer a{color:#ffe08a}
+
+/* COLLAPSE ICON */
+.collapsible-btn span.icon{font-weight:bold;font-size:20px;margin-left:10px}
+</style>
+</head>
+<body>
+
+<header>
+    <img src="DEDEATlogo.png" alt="DEDEAT Logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="opportunities.html">Opportunities</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container">
+    <h1>Contact Us</h1>
+    <p>Reach out to our Head Office or regional offices for assistance.</p>
+
+    <!-- Head Office -->
+    <button class="collapsible-btn">Head Office <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Mr. Ncedo Lisani</h3>
+            <p>Deputy Director: Communications</p>
+            <p>Email: <a href="mailto:Ncedo.Lisani@dedea.gov.za">Ncedo.Lisani@dedea.gov.za</a></p>
+            <p>Tel: 066-485-0501</p>
+        </div>
+        <div class="card">
+            <h3>Ms. Noncedo Mancotywa</h3>
+            <p>Assistant Director: Communications</p>
+            <p>Email: <a href="mailto:Noncedo.Mancotywa@dedea.gov.za">Noncedo.Mancotywa@dedea.gov.za</a></p>
+            <p>Tel: 071-884-2910</p>
+        </div>
+    </div>
+
+    <!-- Chris Hani Region -->
+    <button class="collapsible-btn">Chris Hani Region <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Ms. Xolile Titus</h3>
+            <p>Regional Director</p>
+            <p>Komani Block E Office Park, Komani, 5319</p>
+        </div>
+        <div class="card">
+            <h3>Mr. Nyhweba Dyani</h3>
+            <p>Contact</p>
+            <p>Email: <a href="mailto:Nyhweba.Dyani@dedea.gov.za">Nyhweba.Dyani@dedea.gov.za</a></p>
+            <p>Tel: 083 382 1704</p>
+        </div>
+    </div>
+
+    <!-- Alfred Nzo Region -->
+    <button class="collapsible-btn">Alfred Nzo Region <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Ms. Nosisa Ndaba</h3>
+            <p>Acting Regional Director</p>
+            <p>EX Maluti College of Education, Maluti, 4740</p>
+        </div>
+        <div class="card">
+            <h3>Ms. Fuzeka Ntwana</h3>
+            <p>Contact</p>
+            <p>Email: <a href="mailto:Fuzeka.Ntwana@dedea.gov.za">Fuzeka.Ntwana@dedea.gov.za</a></p>
+            <p>Tel: 063 407 3439</p>
+        </div>
+    </div>
+
+    <!-- OR Tambo Region -->
+    <button class="collapsible-btn">OR Tambo Region <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Mr. Sizakele Gabula</h3>
+            <p>Regional Director</p>
+            <p>Cnr Owenn & Leeds Streets 5th Floor, Botha Sigcawu Building, Mthatha, 5101</p>
+        </div>
+        <div class="card">
+            <h3>Feziwe Gqetywa</h3>
+            <p>Contact</p>
+            <p>Email: <a href="mailto:Feziwe.Gqetywa@dedea.gov.za">Feziwe.Gqetywa@dedea.gov.za</a></p>
+            <p>Tel: 073 185 6755</p>
+        </div>
+    </div>
+
+    <!-- Amathole Region -->
+    <button class="collapsible-btn">Amathole Region <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Ms. Vuyelwa Mantyi</h3>
+            <p>Regional Director</p>
+            <p>Alderwood House, Palm Square Business Park, Beacon Bay, East London, 5241</p>
+        </div>
+        <div class="card">
+            <h3>Ms. Jackoleen Breetzke</h3>
+            <p>Contact</p>
+            <p>Email: <a href="mailto:Jackoleen.Breetzke@dedea.gov.za">Jackoleen.Breetzke@dedea.gov.za</a></p>
+            <p>Tel: 082 294 5842</p>
+        </div>
+    </div>
+
+    <!-- Joe Gqabi Region -->
+    <button class="collapsible-btn">Joe Gqabi Region <span class="icon">+</span></button>
+    <div class="collapsible-content">
+        <div class="card">
+            <h3>Dr. Mzukisi Mboto</h3>
+            <p>Regional Director</p>
+            <p>Crn 27 Queens Terrace & Castle Hill, Maletswai, 9750</p>
+        </div>
+        <div class="card">
+            <h3>Ms. Zanele Ntinga</h3>
+            <p>Contact</p>
+            <p>Email: <a href="mailto:Zanele.Ntinga@dedea.gov.za">Zanele.Ntinga@dedea.gov.za</a></p>
+            <p>Tel: 060 564 6244</p>
+        </div>
+    </div>
+
+    <h2>Send Us a Message</h2>
+    <form onsubmit="alert('Demo: message sent');return false" style="max-width:560px">
+        <label>Name<br><input type="text" required></label><br>
+        <label>Email<br><input type="email" required></label><br>
+        <label>Message<br><textarea rows="5" required></textarea></label><br>
+        <button class="btn gold" type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>Contact Information: Head Office & Regional Offices</p>
+    <p>
+        <a href="#">Facebook</a> ·
+        <a href="#">X (Twitter)</a> ·
+        <a href="#">LinkedIn</a>
+    </p>
+    <p>&copy; 2025 Department of Economic Development, Environmental Affairs and Tourism</p>
+</footer>
+<script>
+const collapsibles = document.querySelectorAll('.collapsible-btn');
+collapsibles.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.icon');
+
+        // Close all other collapsibles
+        collapsibles.forEach(otherBtn => {
+            const otherContent = otherBtn.nextElementSibling;
+            const otherIcon = otherBtn.querySelector('.icon');
+            if(otherContent !== content){
+                otherContent.style.display = "none";
+                otherIcon.textContent = "+";
+            }
+        });
+
+        // Toggle current collapsible
+        if(content.style.display === "block"){
+            content.style.display = "none";
+            icon.textContent = "+";
+        } else {
+            content.style.display = "block";
+            icon.textContent = "−";
+        }
+    });
+});
+</script>
+
+
+</body>
+</html>
+

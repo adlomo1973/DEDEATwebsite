@@ -1,0 +1,272 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Services | DEDEAT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+        --primary-maroon: #7A0026; 
+        --primary-maroon-2: #5c001d; 
+        --accent-gold: #f2b300;  
+        --text-dark: #222222;
+        --text-on-dark: #ffffff;
+        --bg-lite: #fafafa;
+        --card: #ffffff;
+        --muted: #f4f4f4;
+        --focus: #ffd24d; 
+    }
+    *{box-sizing:border-box}
+    body {
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        margin: 0;
+        background: var(--bg-lite);
+        color: var(--text-dark);
+        line-height: 1.45;
+    }
+    a{color: var(--primary-maroon); text-decoration: none}
+    a:hover{color: var(--accent-gold)}
+    a:focus, button:focus{outline: 3px solid var(--focus); outline-offset: 2px}
+
+    /* ===== HEADER ===== */
+    header{
+        background:#fff;
+        border-bottom: 4px solid var(--primary-maroon);
+        display:flex;align-items:center;justify-content:space-between;gap:24px;
+        padding:12px 28px;
+    }
+    header img{height:52px}
+    nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+    nav a{font-weight:600;color:var(--text-dark)}
+    nav a:hover{color:var(--primary-maroon)}
+
+    /* ===== HERO ===== */
+    .hero{
+        color:var(--text-on-dark);text-align:center;padding:64px 20px;
+        background: linear-gradient(135deg, var(--primary-maroon), var(--primary-maroon-2));
+    }
+    .hero h1{font-size:2.2rem;margin:0 0 14px}
+
+    /* ===== CONTAINER ===== */
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* ===== TABS ===== */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 3px solid var(--primary-maroon);
+        margin-bottom: 1.5rem;
+    }
+    .tab {
+        flex: 1;
+        padding: 14px;
+        text-align: center;
+        cursor: pointer;
+        background: var(--muted);
+        font-weight: 600;
+        color: var(--primary-maroon);
+        transition: background 0.3s;
+    }
+    .tab:hover { background: #e7e7e7; }
+    .tab.active {
+        background: var(--primary-maroon);
+        color: white;
+    }
+
+    /* ===== TAB CONTENT ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    /* ===== CARDS ===== */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px,1fr));gap:18px}
+    .card{
+        background:var(--card);
+        border:1px solid #e9e9e9;
+        border-radius:12px;
+        padding:18px;
+        box-shadow:0 2px 5px rgba(0,0,0,.05);
+        transition:transform .2s, box-shadow .2s;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.1)}
+    .card h3{margin-top:0;color:var(--primary-maroon)}
+    .card p{margin:0.4rem 0}
+
+    /* ===== FOOTER ===== */
+    footer{
+        background: var(--primary-maroon);
+        color: var(--text-on-dark);
+        text-align:center;
+        padding:24px
+    }
+    footer a{color:#ffe08a}
+</style>
+</head>
+<body>
+
+    <header>
+        <img src="DEDEATlogo.png" alt="DEDEAT Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Our Services</h1>
+        <p>What the Department of Economic Development, Environmental Affairs and Tourism Offers</p>
+    </section>
+
+    <section class="container">
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('growth', this)">Economic Growth</div>
+            <div class="tab" onclick="openTab('regulation', this)">Business Regulation</div>
+            <div class="tab" onclick="openTab('tourism', this)">Tourism</div>
+            <div class="tab" onclick="openTab('environment', this)">Environment</div>
+            <div class="tab" onclick="openTab('support', this)">Support & Governance</div>
+            <div class="tab" onclick="openTab('innovation', this)">Innovation</div>
+        </div>
+
+        <!-- ECONOMIC GROWTH -->
+        <div id="growth" class="tab-content active">
+            <div class="cards">
+                <div class="card">
+                    <h3>Local & Regional Economic Development (LRED)</h3>
+                    <p>Funding and technical support for qualifying projects, ensuring sustainability and impact.</p>
+                </div>
+                <div class="card">
+                    <h3>Enterprise Development</h3>
+                    <p>Financial and non-financial assistance, MSME strategies, Imvaba Fund support, and training.</p>
+                </div>
+                <div class="card">
+                    <h3>Trade & Sector Development</h3>
+                    <p>Facilitating investment and supporting clusters in automotive, agro-processing, green economy, tourism, and more.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUSINESS REGULATION -->
+        <div id="regulation" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Business Regulation & Governance</h3>
+                    <p>Licensing, compliance inspections, enforcement, and consumer education workshops.</p>
+                </div>
+                <div class="card">
+                    <h3>Consumer Protection</h3>
+                    <p>Consumer Protection Mediate, complaint resolution, awareness campaigns</p> 
+		    <p> operates a dedicated call centre call center number is 0860007255.</p>
+		    <div class="cards">
+        <div class="card">
+            <h3>Consumer Protection Act, No. 3 of 2018</h3>
+            <p>The Consumer Protection Act (CPA) No. 3 of 2018 safeguards your rights as a consumer, ensuring fairness, safety, and transparency in the marketplace.</p>
+            <p>Under the CPA, you are entitled to:</p>
+            <ul>
+                <li>Fair treatment and safe, quality goods and services.</li>
+                <li>Clear, accurate information about products and services.</li>
+                <li>Protection against harmful products, misleading advertising, and unfair contracts.</li>
+                <li>Rights to refunds, repairs, or replacements for defective goods.</li>
+                <li>Access to dispute resolution through the National Consumer Commission (NCC).</li>
+            </ul>
+            <p>Learn more and access the legal texts:</p>
+            <ul>
+                <li><a href="https://www.gov.za/sites/default/files/gcis_document/201409/321864670.pdf" target="_blank">Consumer Protection Act, No. 3 of 2018 (Full Text)</a></li>
+                <li><a href="https://www.gov.za/documents/consumer-protection-regulations" target="_blank">Consumer Protection Regulations</a></li>
+            </ul>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TOURISM -->
+        <div id="tourism" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Tourism Development & Regulation</h3>
+                    <p>Infrastructure development, marketing the province, partnerships, and implementation of the Tourism Master Plan.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENVIRONMENT -->
+        <div id="environment" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Environmental Management & Protection</h3>
+                    <p>Environmental impact assessments, compliance, waste and air quality management, biodiversity and climate response.</p>
+                </div>
+                <div class="card">
+                    <h3>Expanded Public Works Programme (EPWP)</h3>
+                    <p>Employment and skills through waste management, conservation and environmental projects.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUPPORT & GOVERNANCE -->
+        <div id="support" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Support to Public Entities</h3>
+                    <p>Oversight and governance of ECDC, Coega, East London IDZ, Parks & Tourism Agency, Liquor & Gambling Boards.</p>
+                </div>
+                <div class="card">
+                    <h3>Human Resource Management</h3>
+                    <p>Recruitment, training, wellness, and equity programmes for departmental staff.</p>
+                </div>
+                <div class="card">
+                    <h3>Governance, Risk & Audit</h3>
+                    <p>Audit, risk management, anti-fraud and compliance to ensure accountability.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INNOVATION -->
+        <div id="innovation" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>ICT & Knowledge Management</h3>
+                    <p>Digital transformation, records management, helpdesk, and cybersecurity.</p>
+                </div>
+                <div class="card">
+                    <h3>Communications</h3>
+                    <p>Stakeholder engagement, media relations, social media and event profiling.</p>
+                </div>
+                <div class="card">
+                    <h3>Organisational Development</h3>
+                    <p>Service delivery models, job analysis, structure alignment and service charters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact Information: Head Office & Regional Offices</p>
+        <p>
+            <a href="#">Facebook</a> ·
+            <a href="#">X (Twitter)</a> ·
+            <a href="#">LinkedIn</a>
+        </p>
+        <p>&copy; 2025 Department of Economic Development, Environmental Affairs and Tourism</p>
+    </footer>
+
+<script>
+function openTab(tabId, element) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    element.classList.add('active');
+}
+</script>
+
+</body>
+</html>

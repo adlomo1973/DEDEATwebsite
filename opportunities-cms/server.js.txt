@@ -1,0 +1,45 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const app = express();
+const PORT = 3000;
+
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+app.post('/add-entry', (req, res)=>{
+    const data = req.body;
+    const filePath = './public/opportunities.json';
+    fs.readFile(filePath, 'utf8', (err, jsonData)=>{
+        if(err) return res.json({message:'Error reading JSON'});
+        let json = JSON.parse(jsonData);
+
+        if(data.type === 'tender'){
+            const sub = data.subcategory || 'Published';
+            if(!json.tenders[sub]) json.tenders[sub] = [];
+            json.tenders[sub].push({
+                title: data.title,
+                ref: data.ref,
+                date: data.date,
+                description: data.description,
+                file: data.file
+            });
+        } else if(data.type === 'vacancy'){
+            if(!json.vacancies) json.vacancies = [];
+            json.vacancies.push({
+                title: data.title,
+                department: data.ref,
+                closingDate: data.date,
+                requirements: data.description,
+                file: data.file
+            });
+        }
+
+        fs.writeFile(filePath, JSON.stringify(json, null, 2), err=>{
+            if(err) return res.json({message:'Error writing JSON'});
+            res.json({message:'Entry added successfully!'});
+        });
+    });
+});
+
+app.listen(PORT, ()=>console.log(`Server running at http://localhost:${PORT}`));

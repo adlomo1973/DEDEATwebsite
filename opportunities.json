@@ -1,0 +1,114 @@
+{
+  "tenders": {
+    "Published": [
+      {
+        "title": "Supply of IT Equipment",
+        "ref": "TND001",
+        "date": "2025-08-31",
+        "description": "Latest IT equipment for office use.",
+        "file": "tenders/TND001.pdf"
+      }
+    ],
+    "Awarded": [
+      {
+        "title": "Road Maintenance",
+        "ref": "TND003",
+        "date": "2025-08-25",
+        "description": "Maintenance of provincial roads.",
+        "file": "tenders/TND003.pdf"
+      }
+    ],
+    "Cancelled": [
+      {
+        "title": "Office Supplies",
+        "ref": "TND004",
+        "date": "2025-08-20",
+        "description": "Cancelled due to budget constraints.",
+        "file": "tenders/TND004.pdf"
+      }
+    ]
+  },
+  "vacancies": [
+    {
+      "title": "IT Management Officer",
+      "department": "IT Unit",
+      "closingDate": "2025-08-31",
+      "requirements": "BSc IT, 3 yrs experience.",
+      "file": "vacancies/ITManagementOfficer.pdf"
+    },
+    {
+      "title": "Finance Officer",
+      "department": "Finance",
+      "closingDate": "2025-09-15",
+      "requirements": "BCom, 2 yrs experience.",
+      "file": "vacancies/FinanceOfficer.pdf"
+    }
+  ]
+}
+<script>
+async function loadOpportunities() {
+    const response = await fetch('opportunities.json');
+    const data = await response.json();
+
+    // Populate Tenders
+    ["Published", "Awarded", "Cancelled"].forEach(type => {
+        const container = document.getElementById(type);
+        data.tenders[type].forEach(tender => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <h3>${type} Tender</h3>
+                <p>${tender.description}</p>
+                <button class="collapsible-btn">View ${type} Tenders</button>
+                <div class="collapsible-content">
+                    <table>
+                        <tr><th>Title</th><th>Ref. No.</th><th>Date</th><th>Document</th></tr>
+                        <tr>
+                            <td>${tender.title}</td>
+                            <td>${tender.ref}</td>
+                            <td>${tender.date}</td>
+                            <td>${tender.file ? `<a href="${tender.file}" class="btn" download>Download PDF</a>` : 'N/A'}</td>
+                        </tr>
+                    </table>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    });
+
+    // Populate Vacancies
+    const vacancyContainer = document.getElementById('Vacancy');
+    data.vacancies.forEach(vac => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <h3>${vac.title}</h3>
+            <p>Closing Date: ${vac.closingDate}</p>
+            <button class="collapsible-btn">View Details</button>
+            <div class="collapsible-content">
+                <table>
+                    <tr><th>Position</th><th>Department</th><th>Requirements</th><th>Document</th></tr>
+                    <tr>
+                        <td>${vac.title}</td>
+                        <td>${vac.department}</td>
+                        <td>${vac.requirements}</td>
+                        <td>${vac.file ? `<a href="${vac.file}" class="btn" download>${vac.file}</a>` : 'N/A'}</td>
+                    </tr>
+                </table>
+            </div>
+        `;
+        vacancyContainer.appendChild(card);
+    });
+
+    // Collapsible
+    document.querySelectorAll('.collapsible-btn').forEach(btn => {
+        btn.addEventListener('click', ()=>{
+            const content = btn.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+}
+
+// Load JSON data when page loads
+window.addEventListener('DOMContentLoaded', loadOpportunities);
+</script>

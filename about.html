@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>DEDEAT</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <style>
+        :root {
+            --primary-maroon: #7A0026; /* deep maroon */
+            --primary-maroon-2: #5c001d; /* darker shade */
+            --accent-gold: #f2b300;  /* bright gold */
+            --text-dark: #222222;
+            --text-on-dark: #ffffff;
+            --bg-lite: #fafafa;
+            --card: #ffffff;
+            --muted: #f4f4f4;
+            --focus: #ffd24d; /* focus ring */
+        }
+        *{box-sizing:border-box}
+        body {
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: var(--bg-lite);
+            color: var(--text-dark);
+            line-height: 1.45;
+        }
+        a{color: var(--primary-maroon); text-decoration: none}
+        a:hover{color: var(--accent-gold)}
+        a:focus, button:focus{outline: 3px solid var(--focus); outline-offset: 2px}
+
+        header{
+            background:#fff;
+            border-bottom: 4px solid var(--primary-maroon);
+            display:flex;align-items:center;justify-content:space-between;gap:24px;
+            padding:12px 28px;
+        }
+        header img{height:52px}
+        nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+        nav a{font-weight:600;color:var(--text-dark)}
+        nav a:hover{color:var(--primary-maroon)}
+
+        .container{max-width:1100px;margin:0 auto;padding:28px}
+        h2, h3{color:var(--primary-maroon)}
+
+        .cards{display:grid;grid-template-columns:repeat(auto-fit, minmax(250px,1fr));gap:22px;margin-top:20px}
+        .card{background:var(--card);border:1px solid #e9e9e9;border-radius:12px;padding:18px;text-align:center;
+              box-shadow:0 2px 5px rgba(0,0,0,.05);transition:transform .2s, box-shadow .2s}
+        .card img{border-radius:50%;max-width:120px;margin-bottom:12px}
+        .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.1)}
+
+        footer{background: var(--primary-maroon);color:var(--text-on-dark);text-align:center;padding:24px}
+        footer a{color:#ffe08a}
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <img src="DEDEATlogo.png" alt="DEDEAT Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h1>About DEDEAT</h1>
+        <p>The Department advances economic development, promotes environmental sustainability, and supports tourism growth across the Eastern Cape.</p>
+        
+        <h3>Our Leadership</h3>
+        <div class="cards">
+            <div class="card">
+                <img src="mec.jpg" alt="MEC Photo">
+                <h3>Hon. Nonkqubela Pieters</h3>
+                <p><strong>Member of the Executive Council (MEC)</strong></p>
+                <p>Email: <a href="mailto:Mandisa.Nohashe@dedea.gov.za">Mandisa.Nohashe@dedea.gov.za</a></p>
+                <p>Tel: 060-524-4299</p>
+                <p>Head Office, Block 16, Business Village, Bisho 5605, South Africa</p>
+            </div>
+            <div class="card">
+                <img src="hod.jpg" alt="HOD Photo">
+                <h3>Ms. Mickey Mama</h3>
+                <p><strong>Head of Department (HOD)</strong></p>
+                <p>Email: <a href="mailto:Pendu.Guma@dedea.gov.za">Pendu.Guma@dedea.gov.za</a></p>
+                <p>Tel: 071-882-5247</p>
+                <p>Head Office, Block 16, Business Village, Bisho 5605, South Africa</p>
+            </div>
+        </div>
+
+        <h3>Our Mandate</h3>
+        <p>To promote equitable, sustainable economic development and environmental management through effective programmes and partnerships.</p>
+        
+        <h3>Values</h3>
+        <ul>
+            <li>Service Excellence</li>
+            <li>Accountability</li>
+            <li>Sustainability</li>
+            <li>Collaboration</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Contact Information: Head Office & Regional Offices</p>
+        <p>
+            <a href="#">Facebook</a> ·
+            <a href="#">X (Twitter)</a> ·
+            <a href="#">LinkedIn</a>
+        </p>
+        <p>&copy; 2025 Department of Economic Development, Environmental Affairs and Tourism</p>
+    </footer>
+
+</body>
+</html>
+

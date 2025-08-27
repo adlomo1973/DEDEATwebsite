@@ -1,0 +1,64 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header, nav {
+    background-color: #00573d; /* Deep green */
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold/yellow */
+}
+
+.hero {
+    background-color: #e6f2ec;
+    color: #00573d;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.tile {
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.tile:hover {
+    background-color: #fff8dc; /* Light gold/yellow */
+}
+
+button {
+    background-color: #00573d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffd700;
+    color: #00573d;
+}
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}

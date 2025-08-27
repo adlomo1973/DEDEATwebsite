@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CMS | DEDEAT Opportunities</title>
+<style>
+body{font-family:sans-serif;padding:20px;}
+input, select, textarea{width:100%;margin:8px 0;padding:8px;}
+button{padding:10px 16px;background:#7A0026;color:white;border:none;border-radius:4px;}
+</style>
+</head>
+<body>
+<h1>Opportunities CMS</h1>
+
+<form id="cmsForm">
+    <label>Type</label>
+    <select name="type" required>
+        <option value="tender">Tender</option>
+        <option value="vacancy">Vacancy</option>
+    </select>
+
+    <label>Subcategory (for Tenders)</label>
+    <select name="subcategory">
+        <option value="Published">Published</option>
+        <option value="Awarded">Awarded</option>
+        <option value="Cancelled">Cancelled</option>
+    </select>
+
+    <label>Title</label>
+    <input type="text" name="title" required>
+
+    <label>Reference / Department</label>
+    <input type="text" name="ref" required>
+
+    <label>Closing / Award Date</label>
+    <input type="date" name="date" required>
+
+    <label>Requirements / Description</label>
+    <textarea name="description"></textarea>
+
+    <label>PDF File Name (e.g., TND005.pdf)</label>
+    <input type="text" name="file">
+
+    <button type="submit">Add Entry</button>
+</form>
+
+<div id="msg"></div>
+
+<script>
+const form = document.getElementById('cmsForm');
+form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((v,k)=>data[k]=v);
+    const res = await fetch('/add-entry', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    document.getElementById('msg').innerText = result.message;
+    form.reset();
+});
+</script>
+</body>
+</html>

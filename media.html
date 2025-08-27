@@ -1,0 +1,221 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Media Centre | DEDEAT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    :root {
+        --primary-maroon: #7A0026; 
+        --primary-maroon-2: #5c001d; 
+        --accent-gold: #f2b300;  
+        --text-dark: #222222;
+        --text-on-dark: #ffffff;
+        --bg-lite: #fafafa;
+        --card: #ffffff;
+        --muted: #f4f4f4;
+        --focus: #ffd24d; 
+    }
+    *{box-sizing:border-box}
+    body {
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        margin: 0;
+        background: var(--bg-lite);
+        color: var(--text-dark);
+        line-height: 1.45;
+    }
+    a{color: var(--primary-maroon); text-decoration: none}
+    a:hover{color: var(--accent-gold)}
+    a:focus, button:focus{outline: 3px solid var(--focus); outline-offset: 2px}
+
+    /* ===== HEADER ===== */
+    header{
+        background:#fff;
+        border-bottom: 4px solid var(--primary-maroon);
+        display:flex;align-items:center;justify-content:space-between;gap:24px;
+        padding:12px 28px;
+    }
+    header img{height:52px}
+    nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+    nav a{font-weight:600;color:var(--text-dark)}
+    nav a:hover{color:var(--primary-maroon)}
+
+    /* ===== HERO ===== */
+    .hero{
+        color:var(--text-on-dark);text-align:center;padding:64px 20px;
+        background: linear-gradient(135deg, var(--primary-maroon), var(--primary-maroon-2));
+    }
+    .hero h1{font-size:2.2rem;margin:0 0 14px}
+
+    /* ===== CONTAINER ===== */
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* ===== TABS ===== */
+    .tabs {
+        display: flex;
+        border-bottom: 3px solid var(--primary-maroon);
+        margin-bottom: 1.5rem;
+    }
+    .tab {
+        flex: 1;
+        padding: 14px;
+        text-align: center;
+        cursor: pointer;
+        background: var(--muted);
+        font-weight: 600;
+        color: var(--primary-maroon);
+        transition: background 0.3s;
+    }
+    .tab:hover { background: #e7e7e7; }
+    .tab.active {
+        background: var(--primary-maroon);
+        color: white;
+    }
+
+    /* ===== TAB CONTENT ===== */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.5s; }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    /* ===== CARDS ===== */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px,1fr));gap:18px}
+    .card{
+        background:var(--card);
+        border:1px solid #e9e9e9;
+        border-radius:12px;
+        padding:18px;
+        box-shadow:0 2px 5px rgba(0,0,0,.05);
+        transition:transform .2s, box-shadow .2s;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.1)}
+    .card h3{margin-top:0;color:var(--primary-maroon)}
+
+    .btn{
+        display:inline-block;
+        margin-top:0.5rem;
+        padding:10px 16px;
+        background:var(--accent-gold);
+        color:#000;
+        border-radius:6px;
+        font-weight:600;
+    }
+    .btn:hover{background:#ffd24d}
+
+    /* ===== FOOTER ===== */
+    footer{
+        background: var(--primary-maroon);
+        color: var(--text-on-dark);
+        text-align:center;
+        padding:24px
+    }
+    footer a{color:#ffe08a}
+</style>
+</head>
+<body>
+
+    <header>
+        <img src="DEDEATlogo.png" alt="DEDEAT Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="opportunities.html">Opportunities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Media Centre</h1>
+        <p>Latest news, upcoming events and official publications</p>
+    </section>
+
+    <section class="container">
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('news', this)">News</div>
+            <div class="tab" onclick="openTab('events', this)">Events</div>
+            <div class="tab" onclick="openTab('publications', this)">Publications</div>
+        </div>
+
+        <!-- NEWS -->
+        <div id="news" class="tab-content active">
+            <div class="cards">
+                <div class="card">
+                    <h3>Department Launches New Programme</h3>
+                    <p><small>25 August 2025</small></p>
+                    <p>The Department has announced a new initiative to support local communities...</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="card">
+                    <h3>Minister Addresses Stakeholders</h3>
+                    <p><small>15 August 2025</small></p>
+                    <p>The Honourable Minister engaged stakeholders in a roundtable discussion...</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- EVENTS -->
+        <div id="events" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Eastern Cape Development Summit</h3>
+                    <p><strong>Date:</strong> 10 September 2025</p>
+                    <p><strong>Location:</strong> East London ICC</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+                <div class="card">
+                    <h3>Public Participation Meeting</h3>
+                    <p><strong>Date:</strong> 18 September 2025</p>
+                    <p><strong>Location:</strong> Mthatha Town Hall</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICATIONS -->
+        <div id="publications" class="tab-content">
+            <div class="cards">
+                <div class="card">
+                    <h3>Annual Report 2024/25</h3>
+                    <p>A comprehensive overview of departmental performance and finances.</p>
+                    <a href="annual-report-2025.pdf" class="btn" download>Download PDF</a>
+                </div>
+                <div class="card">
+                    <h3>Strategic Plan 2025–2030</h3>
+                    <p>Outlining the long-term goals and strategic vision of the Department.</p>
+                    <a href="strategic-plan-2025.pdf" class="btn" download>Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact Information: Head Office & Regional Offices</p>
+        <p>
+            <a href="#">Facebook</a> ·
+            <a href="#">X (Twitter)</a> ·
+            <a href="#">LinkedIn</a>
+        </p>
+        <p>&copy; 2025 Department of Economic Development, Environmental Affairs and Tourism</p>
+    </footer>
+
+<script>
+function openTab(tabId, element) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    // Remove active state from all tabs
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    // Show the selected content
+    document.getElementById(tabId).classList.add('active');
+    element.classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
